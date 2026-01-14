@@ -60,12 +60,12 @@ jobs:
 
             - name: Set version
               run: npm version ${{ github.event.release.tag_name }} --no-git-tag-version
-              working-directory: clients/typescript
+              working-directory: harnesses/typescript
             - run: bun install --frozen-lockfile
-              working-directory: clients/typescript
+              working-directory: harnesses/typescript
             - run: bun run build
-              working-directory: clients/typescript
+              working-directory: harnesses/typescript
             - run: bun test
-              working-directory: clients/typescript
+              working-directory: harnesses/typescript
             - run: npm publish
-              working-directory: clients/typescript
+              working-directory: harnesses/typescript
